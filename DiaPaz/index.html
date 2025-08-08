@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Título y Botón para abrir el chat -->
+    <h1 id="titulo">Día de la paz</h1>
+
+    <!-- Botón para reproducir/pausar canción -->
+<button id="playSongBtn">
+    <i id="playPauseIcon" class="fa fa-play"></i> Reproducir Canción
+</button>
+<audio id="songAudio" src="music/paz.mp3"></audio>
+
+
+    <button id="openChatBtn">Iniciar Chat</button>
+
+    <!-- Modal del Chatbot -->
+    <div id="chatModal" class="modal">
+        <div class="modal-content">
+            <span id="closeBtn" class="close">&times;</span>
+            <h2>ChatBot</h2>
+            <div id="chatbox">
+                <div id="chatbotMessages"></div>
+                <input type="text" id="userInput" placeholder="Escribe tu pregunta..." />
+                <button id="sendBtn">Enviar</button>
+                <div id="quickOptions"></div>
+            </div>
+          
+        </div>
+    </div>
+
+    
+
+    <script src="script.js"></script>
+</body>
+</html>

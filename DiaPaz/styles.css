@@ -1,0 +1,220 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background-image: url('fondo.png');  /* Ruta de tu imagen */
+    background-size: cover;  /* La imagen cubre toda la pantalla */
+    background-position: center center;  /* Centrar la imagen */
+    background-attachment: fixed;  /* Hace que la imagen no se desplace con el contenido */
+    background-repeat: no-repeat;  /* Evitar que la imagen se repita */
+    color: #333;  /* Color del texto */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro sutil */
+}
+h1 {
+    font-size: 60px;
+    color: #ffcc00;  /* Color dorado más brillante */
+    margin-top: 50px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase; /* Para hacerlo más elegante */
+    letter-spacing: 2px; /* Espaciado de letras para darle más estilo */
+    
+    /* Sombra y efectos de resplandor */
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3), 
+                 0 0 25px rgba(255, 201, 0, 0.6),  /* Resplandor dorado */
+                 0 0 50px rgba(255, 201, 0, 0.6); /* Resplandor fuerte */
+
+    /* Animación de aparición */
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3), 
+                     0 0 15px rgba(255, 201, 0, 0.6),
+                     0 0 25px rgba(255, 201, 0, 0.3);
+    }
+    100% {
+        text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5), 
+                     0 0 35px rgba(255, 201, 0, 1),
+                     0 0 75px rgba(255, 201, 0, 0.8);
+    }
+}
+
+
+
+
+
+/* Estilos del Modal */
+.modal {
+    display: none; /* Inicialmente oculto */
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 10px;
+    transition: opacity 0.5s ease, visibility 0s linear 0.5s; /* Transición suave */
+}
+
+.modal.show {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    padding: 20px;
+    text-align: left;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+
+/* Cerrar el modal */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #333; /* Color del botón de cerrar */
+}
+
+/* Chatbox */
+#chatbox {
+    margin-top: 20px;
+}
+
+#chatbotMessages {
+    height: 300px;
+    overflow-y: scroll;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Estilo del input de usuario */
+#userInput {
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s;
+}
+
+#userInput:focus {
+    border-color: #f9c74f; /* Color de borde al enfocar */
+    outline: none; /* Sin contorno */
+}
+
+/* Botones */
+/* Animación para deslizamiento de botones */
+button {
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    background-color: #f9c74f;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+    opacity: 0; /* Inicialmente invisibles */
+    transform: translateY(20px); /* Inicialmente desplazados hacia abajo */
+    animation: slideIn 1s forwards; /* Animación de deslizamiento */
+}
+
+/* Animación para los botones (deslizar desde abajo) */
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Efecto de hover en los botones */
+button:hover {
+    background-color: #f1a800;
+    transform: scale(1.1); /* Aumentar tamaño del botón */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Aumentar sombra */
+}
+
+
+/* Estilo para el área de las opciones rápidas */
+#quickOptions {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#quickOptions button {
+    background-color: #ffae00;
+    margin: 5px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+#quickOptions button:hover {
+    background-color: #ffd000;
+}
+
+/* Estilos del botón de canción */
+#playSongBtn {
+    background-color: #000000;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 12px 25px;
+    cursor: pointer;
+    border: none;
+    margin-top: 20px;
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+#playSongBtn:hover {
+    background-color: #313131;
+}
+
+/* Palomas */
+.paloma {
+    position: absolute;
+    width: 60px; /* Tamaño de la paloma más grande */
+    opacity: 0.9;
+    animation: palomasCayendo 15s linear infinite;
+    z-index: -1;
+}
+
+/* Animación de las palomas cayendo */
+@keyframes palomasCayendo {
+    0% { top: -120px; opacity: 1; left: 20%; }
+    50% { top: 50%; opacity: 0.5; left: 50%; }
+    100% { top: 100%; opacity: 0; left: 80%; }
+}
+/* Efecto hover en el input */
+#userInput {
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#userInput:hover {
+    border-color: #f9c74f; /* Color dorado en el borde */
+    box-shadow: 0 0 10px rgba(249, 199, 79, 0.6); /* Sombra dorada */
+}
+#openChatBtn{
+    color: #000000;
+}
